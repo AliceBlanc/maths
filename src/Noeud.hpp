@@ -17,7 +17,10 @@ class Noeud : Arbre {
     private Arbre* droite ;
     
 public:
-    
+    Noeud() ;
+    Noeud(Arbre*, Arbre*) ;
+    void test() ;
+    String to_string() ;
 };
 
 #endif /* Noeud_hpp */
