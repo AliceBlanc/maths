@@ -21,8 +21,7 @@ private :
 public:
     Noeud() ;
     Noeud(Arbre*, Arbre*) ;
-    void test() ;
-    std::string to_string() override;
+    std::string to_string() ;
     void gauche(Arbre*) ;
     void droite(Arbre*) ;
 };

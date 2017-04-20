@@ -38,14 +38,6 @@ void Noeud::droite(Arbre* d)
 }
 
 
-void Noeud::test()
-{
-    Noeud* test = new Noeud(
-        new Noeud(new Feuille(1,2), new Feuille(3,4)),
-        new Noeud(new Feuille(5,6), new Feuille(7,8))) ;
-    
-    cout << test->to_string() << endl;
-}
 
 string Noeud::to_string()
 {

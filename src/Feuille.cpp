@@ -19,23 +19,23 @@ Feuille::Feuille()
 
 Feuille::Feuille(int g1, int g2)
 {
-    this->gainJ1 = g1;
-    this->gainJ2 = g2 ;
+    this->_gainJ1 = g1;
+    this->_gainJ2 = g2 ;
 }
 
-int Feuille::getGainJ1(){
-    return this->gainJ1 ;
+int Feuille::gainJ1(){
+    return this->_gainJ1 ;
 }
 
-int Feuille::getGainJ2(){
-    return this->gainJ2 ;
+int Feuille::gainJ2(){
+    return this->_gainJ2 ;
 }
 
-int Feuille::comparerGainJ1(Feuille feuille){
-    if (this->getGainJ1() < feuille.getGainJ1()) {
+int Feuille::comparerGainJ1(Feuille* feuille){
+    if (this->gainJ1() < feuille->gainJ1()) {
         return -1 ;
     } else {
-        if (this->getGainJ1() > feuille.getGainJ1()) {
+        if (this->gainJ1() > feuille->gainJ1()) {
             return 1 ;
         } else {
             return 0 ;
@@ -43,11 +43,11 @@ int Feuille::comparerGainJ1(Feuille feuille){
     }
 }
 
-int Feuille::comparerGainJ2(Feuille feuille){
-    if (this->getGainJ2() < feuille.getGainJ2()) {
+int Feuille::comparerGainJ2(Feuille* feuille){
+    if (this->gainJ2() < feuille->gainJ2()) {
         return -1 ;
     } else {
-        if (this->getGainJ2() > feuille.getGainJ2()) {
+        if (this->gainJ2() > feuille->gainJ2()) {
             return 1 ;
         } else {
             return 0 ;
@@ -58,7 +58,7 @@ int Feuille::comparerGainJ2(Feuille feuille){
 string Feuille::to_string()
 {
     stringstream out ;
-    out << "Feuille ( " << this->getGainJ1() << ", " << this->getGainJ2() << " )" ;
+    out << "Feuille ( " << this->gainJ1() << ", " << this->gainJ2() << " )" ;
 
     return out.str() ;
     

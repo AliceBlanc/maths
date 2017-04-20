@@ -18,17 +18,17 @@ class Feuille : public Arbre {
     
 private:
     
-    int gainJ1 ;
-    int gainJ2 ;
+    int _gainJ1 ;
+    int _gainJ2 ;
 
 public:
     
     Feuille() ;
     Feuille(int,int);
-    int getGainJ1();
-    int getGainJ2();
-    int comparerGainJ1(Feuille feuille) ;
-    int comparerGainJ2(Feuille feuille) ;
-    std::string to_string() override ;
+    int gainJ1();
+    int gainJ2();
+    int comparerGainJ1(Feuille* feuille) ;
+    int comparerGainJ2(Feuille* feuille) ;
+    std::string to_string() ;
 };
 #endif /* Feuille_hpp */
