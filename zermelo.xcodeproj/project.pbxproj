@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		09E2B3F71EA913C5005D41B5 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		09E2B3F81EA913CD005D41B5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8D3604621EA90D22006CFBB8 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; path = src; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -14,6 +16,8 @@
 		8D50C1521EA90A870045ED19 = {
 			isa = PBXGroup;
 			children = (
+				09E2B3F81EA913CD005D41B5 /* README.md */,
+				09E2B3F71EA913C5005D41B5 /* Makefile */,
 				8D3604621EA90D22006CFBB8 /* src */,
 			);
 			sourceTree = "<group>";

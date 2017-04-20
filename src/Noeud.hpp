@@ -10,5 +10,14 @@
 #define Noeud_hpp
 
 #include <stdio.h>
+#include "Arbre.hpp"
+
+class Noeud  {
+    Arbre* gauche ;
+    Arbre* droite ;
+    
+public:
+    
+};
 
 #endif /* Noeud_hpp */
