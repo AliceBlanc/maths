@@ -1,6 +1,6 @@
 //
 //  Arbre.hpp
-//  
+//  classe mère de la feuille et du noeud
 //
 //  Created by Alice Blanc on 20/04/2017.
 //
