@@ -6,10 +6,15 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXFileReference section */
+		8D3604621EA90D22006CFBB8 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; path = src; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		8D50C1521EA90A870045ED19 = {
 			isa = PBXGroup;
 			children = (
+				8D3604621EA90D22006CFBB8 /* src */,
 			);
 			sourceTree = "<group>";
 		};
@@ -23,6 +28,7 @@
 			buildPhases = (
 			);
 			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "/Users/aliceblanc/Documents/ESEO/P2/Semestre 4/Maths/zermelo/";
 			dependencies = (
 			);
 			name = zermelo;
@@ -186,6 +192,7 @@
 				8D50C15C1EA90A880045ED19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
