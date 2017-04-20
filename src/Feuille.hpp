@@ -10,5 +10,12 @@
 #define Feuille_hpp
 
 #include <stdio.h>
+#include "Arbre.hpp"
 
+class Feuille : Arbre {
+    int[] gains ;
+    
+public:
+    
+};
 #endif /* Feuille_hpp */
