@@ -26,7 +26,7 @@ public:
     Feuille() ;
     Feuille(int,int);
     int gainJ1();
-    int gainJ2();
+    int gainJ2() ;
     int comparerGainJ1(Feuille* feuille) ;
     int comparerGainJ2(Feuille* feuille) ;
     std::string to_string() ;
