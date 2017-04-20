@@ -13,7 +13,7 @@
 #include "Arbre.hpp"
 
 class Feuille : Arbre {
-    int[] gains ;
+    private int gains[] ;
     
 public:
     

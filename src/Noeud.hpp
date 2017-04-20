@@ -13,8 +13,8 @@
 #include "Arbre.hpp"
 
 class Noeud : Arbre {
-    Arbre* gauche ;
-    Arbre* droite ;
+    private Arbre* gauche ;
+    private Arbre* droite ;
     
 public:
     
