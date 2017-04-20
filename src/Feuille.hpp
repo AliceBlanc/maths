@@ -11,22 +11,24 @@
 
 #include <stdio.h>
 #include "Arbre.hpp"
+#include <string>
 
-class Feuille : Arbre {
+
+class Feuille : public Arbre {
     
 private:
     
-    int gainj1 ;
+    int gainJ1 ;
     int gainJ2 ;
 
 public:
     
     Feuille() ;
     Feuille(int,int);
-    getGainJ1();
-    getGainJ2();
-    comparerGainJ1(Feuille feuille) ;
-    comparerGainJ2(Feuille feuille) ;
-    
+    int getGainJ1();
+    int getGainJ2();
+    int comparerGainJ1(Feuille feuille) ;
+    int comparerGainJ2(Feuille feuille) ;
+    std::string to_string() ;
 };
 #endif /* Feuille_hpp */

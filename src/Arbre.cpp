@@ -7,4 +7,10 @@
 //
 
 #include "Arbre.hpp"
+#import <string>
 
+using namespace std ;
+string Arbre::to_string()
+{
+    return ("Arbre") ;
+}

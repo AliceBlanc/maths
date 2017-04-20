@@ -10,9 +10,11 @@
 #define Arbre_hpp
 
 #include <stdio.h>
+#include <string>
 
 class Arbre {
-    
+public:
+    std::string to_string() ;
 };
 
 #endif /* Arbre_hpp */

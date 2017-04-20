@@ -11,16 +11,20 @@
 
 #include <stdio.h>
 #include "Arbre.hpp"
+#include <string>
 
-class Noeud : Arbre {
-    private Arbre* gauche ;
-    private Arbre* droite ;
+class Noeud : public Arbre {
+private :
+    Arbre* _gauche ;
+    Arbre* _droite ;
     
 public:
     Noeud() ;
     Noeud(Arbre*, Arbre*) ;
     void test() ;
-    String to_string() ;
+    std::string to_string() ;
+    void gauche(Arbre*) ;
+    void droite(Arbre*) ;
 };
 
 #endif /* Noeud_hpp */

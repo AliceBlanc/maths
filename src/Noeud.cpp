@@ -9,34 +9,46 @@
 #include <iostream>
 #include <string>
 #include "Noeud.hpp"
+#include "Feuille.hpp"
 
 using namespace std ;
 
 Noeud::Noeud()
 {
-    Arbre::Arbre
-    super() ;
+    //    Arbre::Arbre
+    //    super() ;
 }
 
 Noeud::Noeud(Arbre* g, Arbre* d)
 {
-    gauche = g ;
-    groite = d ;
+    this->_gauche = g ;
+    this->_droite = d ;
 }
 
-void Noeud::Test()
+
+void Noeud::gauche(Arbre* g)
 {
-    Arbre* test = new Noeud() ;
-    
-    test->gauche(new Noeud(new Feuille(1,2), new Feuille(3,4))) ;
-    test->droite(new Noeud(new Feuille(5,6), new Feuille(7,8))) ;
-    
-    cout << test.to_string() ;
+    this->_gauche = g ;
 }
 
-String Noeud::to_string()
+void Noeud::droite(Arbre* d)
 {
-    String out ;
-    out << "Noeud [ " << this->gauche.to_string() << ", " <<  this->droite.to_string() << " ]" ;
+    this->_droite = d ;
+}
+
+
+void Noeud::test()
+{
+    Arbre* test = new Noeud(
+        new Noeud(new Feuille(1,2), new Feuille(3,4)),
+        new Noeud(new Feuille(5,6), new Feuille(7,8))) ;
+    
+    cout << test->to_string() ;
+}
+
+string Noeud::to_string()
+{
+    string out ;
+    //out << "Noeud [ " << this->gauche.to_string() << ", " <<  this->droite.to_string() << " ]" ;
     return out ;
 }
