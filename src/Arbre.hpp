@@ -11,4 +11,8 @@
 
 #include <stdio.h>
 
+class Arbre {
+    
+};
+
 #endif /* Arbre_hpp */
