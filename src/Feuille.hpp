@@ -29,6 +29,6 @@ public:
     int getGainJ2();
     int comparerGainJ1(Feuille feuille) ;
     int comparerGainJ2(Feuille feuille) ;
-    std::string to_string() ;
+    std::string to_string() override ;
 };
 #endif /* Feuille_hpp */

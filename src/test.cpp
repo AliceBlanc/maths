@@ -1,8 +1,14 @@
 #include <iostream>
+#include "Arbre.hpp"
+#include "Noeud.hpp"
+#include "Feuille.hpp"
+
 
 int main(int a, char**v)
 {
-	std::cout << "Hello World" << std::endl ;
+    Noeud *n  = new Noeud() ;
+    
+    n->test() ;
 	return 0 ;
 	
 }

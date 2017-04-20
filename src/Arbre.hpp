@@ -14,7 +14,7 @@
 
 class Arbre {
 public:
-    std::string to_string() ;
+    virtual std::string to_string() = 0 ;
 };
 
 #endif /* Arbre_hpp */

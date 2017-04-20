@@ -10,7 +10,3 @@
 #import <string>
 
 using namespace std ;
-string Arbre::to_string()
-{
-    return ("Arbre") ;
-}

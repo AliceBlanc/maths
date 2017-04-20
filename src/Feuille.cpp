@@ -8,6 +8,7 @@
 
 #include "Feuille.hpp"
 #include <string>
+#include <sstream>
 
 using namespace std ;
 
@@ -56,9 +57,9 @@ int Feuille::comparerGainJ2(Feuille feuille){
 
 string Feuille::to_string()
 {
-    string out ;
-    out.append("coucou") ;
-    //   out << "(" << this->getGainJ1() << "," << this->getGainJ2() << ")" ;
-    return out ;
+    stringstream out ;
+    out << "Feuille ( " << this->getGainJ1() << ", " << this->getGainJ2() << " )" ;
+
+    return out.str() ;
     
 }

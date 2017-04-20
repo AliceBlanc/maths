@@ -22,7 +22,7 @@ public:
     Noeud() ;
     Noeud(Arbre*, Arbre*) ;
     void test() ;
-    std::string to_string() ;
+    std::string to_string() override;
     void gauche(Arbre*) ;
     void droite(Arbre*) ;
 };

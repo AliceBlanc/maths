@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
 #include "Noeud.hpp"
 #include "Feuille.hpp"
 
@@ -39,16 +40,16 @@ void Noeud::droite(Arbre* d)
 
 void Noeud::test()
 {
-    Arbre* test = new Noeud(
+    Noeud* test = new Noeud(
         new Noeud(new Feuille(1,2), new Feuille(3,4)),
         new Noeud(new Feuille(5,6), new Feuille(7,8))) ;
     
-    cout << test->to_string() ;
+    cout << test->to_string() << endl;
 }
 
 string Noeud::to_string()
 {
-    string out ;
-    //out << "Noeud [ " << this->gauche.to_string() << ", " <<  this->droite.to_string() << " ]" ;
-    return out ;
+    stringstream out ;
+    out << "Noeud [ " << this->_gauche->to_string() << ", " << this->_droite->to_string() << " ]" ;
+    return out.str() ;
 }
