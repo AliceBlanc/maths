@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include "Arbre.hpp"
 
-class Noeud  {
+class Noeud : Arbre {
     Arbre* gauche ;
     Arbre* droite ;
     
