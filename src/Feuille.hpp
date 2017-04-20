@@ -31,4 +31,5 @@ public:
     int comparerGainJ2(Feuille* feuille) ;
     std::string to_string() ;
 };
+
 #endif /* Feuille_hpp */
