@@ -89,37 +89,26 @@ Feuille* Noeud::zermelo(int j)
     int jSuivant = (j == 1 ? 1 : 2) ;
     Feuille *g, *d ;
     int v1, v2 ;
-    if(typeid(this->droite()) == typeid(Noeud)) {
-        d = ((Noeud*)this->droite())->zermelo(jSuivant) ;
-    } else {
-        d = (Feuille*) (Feuille*)this->droite() ;
-    }
-    if(typeid(this->gauche()) == typeid(Noeud)) {
-        g = ((Noeud*)this->gauche())->zermelo(jSuivant) ;
-    } else {
-        g = (Feuille*) (Feuille*)this->gauche() ;
-    }
-    if(j == 1) {
-        int cmp = g->comparerGainJ1(d) ;
-        // Gain à gauche moins intéressant que gains à droite. Choix droite
-        if(cmp == -1) {
-            v1 = d->gainJ1() ;
-            V2 = d->gainJ2() ;
-        } else if(cmp == 0) { // les gains sont égaux. Donc regarder le gain le moins intéressant pour J2
-            if(g->comparerGainJ2(d) < 0) {
-                v1 = g->gainJ1() ;
-                v2 = g->gainJ2 ;
-            } else {
-                v1 = d->gainJ1() ;
-                v2 = d->gainJ2 ;
-            }
-        }
-        else {
-            v1 = g->gainJ1()
-            V2 = g->gainJ2()
-        }
-    } else {
+    d = this->droite()->zermelo(jSuivant) ;
+    g = this->gauche()->zermelo(jSuivant) ;
     
+    int cmp = g->comparerGain(j, d) ;
+    // Gain à gauche moins intéressant que gains à droite. Choix droite
+    if(cmp == -1) {
+        v1 = d->gainJ1() ;
+        v2 = d->gainJ2() ;
+    } else if(cmp == 0) { // les gains sont égaux. Donc regarder le gain le moins intéressant pour l'autre joueur
+        if(g->comparerGain(jSuivant, d) < 0) { // Dans ce cas prendre les gains à gauche
+            v1 = g->gainJ1() ;
+            v2 = g->gainJ2() ;
+        } else { // Sinon à droite
+            v1 = d->gainJ1() ;
+            v2 = d->gainJ2() ;
+        }
+    }
+    else { // Sinon les gains à gauche sont plus intéressants
+        v1 = g->gainJ1() ;
+        v2 = g->gainJ2() ;
     }
     return new Feuille(v1, v2) ;
 }
@@ -135,7 +124,7 @@ Feuille* Noeud::zermelo()
 string Noeud::to_string()
 {
     stringstream out ;
-    out << typeid(this).name() << " (" << this->nom() << "-" << "J" << std::to_string(this->joueur()) << ") [ " <<
+    out << " Noeud (" << this->nom() << "-" << "J" << std::to_string(this->joueur()) << ") [ " <<
         this->_gauche->to_string() << ", " << this->_droite->to_string() << " ]" ;
     return out.str() ;
 }

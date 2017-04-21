@@ -12,6 +12,8 @@
 #include <stdio.h>
 #include <string>
 
+class Feuille ;
+
 class Arbre {
     // un arbre a un arbre parent. Si celui ci est null, alors c'est la racine.
 private:
@@ -23,6 +25,7 @@ public:
     virtual std::string to_string() = 0 ;
     Arbre* parent() ;
     Arbre* parent(Arbre* p) ;
+    virtual Feuille* zermelo(int j) = 0 ;
 };
 
 #endif /* Arbre_hpp */

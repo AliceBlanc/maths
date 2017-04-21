@@ -53,6 +53,13 @@ int Feuille::gainJ2(){
 
 
 // Jeux
+
+Feuille* Feuille::zermelo(int j)
+{
+    return this ;
+}
+
+
 int Feuille::comparerGainJ1(Feuille* feuille){
     if (this->gainJ1() < feuille->gainJ1()) {
         return -1 ;
@@ -65,6 +72,7 @@ int Feuille::comparerGainJ1(Feuille* feuille){
     }
 }
 
+
 int Feuille::comparerGainJ2(Feuille* feuille){
     if (this->gainJ2() < feuille->gainJ2()) {
         return -1 ;
@@ -74,6 +82,14 @@ int Feuille::comparerGainJ2(Feuille* feuille){
         } else {
             return 0 ;
         }
+    }
+}
+int Feuille::comparerGain(int joueur, Feuille* feuille)
+{
+    if(joueur == 1) {
+        return this->comparerGainJ1(feuille) ;
+    } else {
+        return this->comparerGainJ2(feuille) ;
     }
 }
 
