@@ -34,3 +34,6 @@
 # Mac stuff
 .DS_Store
 zermelo.xcodeproj
+.lib
+.d
+
