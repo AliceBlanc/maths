@@ -34,7 +34,7 @@ public:
     int comparerGainJ1(Feuille* feuille) ;
     int comparerGainJ2(Feuille* feuille) ;
     int comparerGain(int j, Feuille* feuille) ;
-    Feuille* zermelo(int j) ;
+    Feuille* zermelo() ;
     std::string to_string() ;
 };
 

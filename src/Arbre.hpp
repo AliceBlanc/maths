@@ -25,7 +25,7 @@ public:
     virtual std::string to_string() = 0 ;
     Arbre* parent() ;
     Arbre* parent(Arbre* p) ;
-    virtual Feuille* zermelo(int j) = 0 ;
+    virtual Feuille* zermelo() = 0 ;
 };
 
 #endif /* Arbre_hpp */

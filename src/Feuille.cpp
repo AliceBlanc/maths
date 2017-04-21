@@ -54,7 +54,7 @@ int Feuille::gainJ2(){
 
 // Jeux
 
-Feuille* Feuille::zermelo(int j)
+Feuille* Feuille::zermelo()
 {
     return this ;
 }

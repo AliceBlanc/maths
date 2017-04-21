@@ -37,7 +37,6 @@ public:
     int joueur(int j) ;
     
     // jeux
-    Feuille* zermelo(int j) ;
     Feuille* zermelo() ;
 
     // Convertion de type

@@ -84,21 +84,21 @@ int Noeud::joueur()
 }
 
 // jeux
-Feuille* Noeud::zermelo(int j)
+Feuille* Noeud::zermelo()
 {
-    int jSuivant = (j == 1 ? 1 : 2) ;
+    int autreJoueur = (this->joueur() == 1 ? 1 : 2) ;
     Feuille *g, *d ;
     int v1, v2 ;
-    d = this->droite()->zermelo(jSuivant) ;
-    g = this->gauche()->zermelo(jSuivant) ;
+    d = this->droite()->zermelo() ;
+    g = this->gauche()->zermelo() ;
     
-    int cmp = g->comparerGain(j, d) ;
+    int cmp = g->comparerGain(this->joueur(), d) ;
     // Gain à gauche moins intéressant que gains à droite. Choix droite
     if(cmp == -1) {
         v1 = d->gainJ1() ;
         v2 = d->gainJ2() ;
     } else if(cmp == 0) { // les gains sont égaux. Donc regarder le gain le moins intéressant pour l'autre joueur
-        if(g->comparerGain(jSuivant, d) < 0) { // Dans ce cas prendre les gains à gauche
+        if(g->comparerGain(autreJoueur, d) < 0) { // Dans ce cas prendre les gains à gauche
             v1 = g->gainJ1() ;
             v2 = g->gainJ2() ;
         } else { // Sinon à droite
@@ -110,12 +110,12 @@ Feuille* Noeud::zermelo(int j)
         v1 = g->gainJ1() ;
         v2 = g->gainJ2() ;
     }
-    return new Feuille(v1, v2) ;
-}
-
-Feuille* Noeud::zermelo()
-{
-    return this->zermelo(1) ;
+    Feuille* r = new Feuille(v1, v2) ;
+    cout
+    << "Zermelo sur noeud " << this->nom() <<  " " << std::to_string(this->joueur()) << " : "
+    << "(" << g->to_string() << "," << d->to_string() << ") Res : "
+    << r->to_string() << endl ;
+    return  r ;
 }
 
 
@@ -124,7 +124,7 @@ Feuille* Noeud::zermelo()
 string Noeud::to_string()
 {
     stringstream out ;
-    out << " Noeud (" << this->nom() << "-" << "J" << std::to_string(this->joueur()) << ") [ " <<
+    out << " Noeud (" << this->nom() << "-" << std::to_string(this->joueur()) << ") [ " <<
         this->_gauche->to_string() << ", " << this->_droite->to_string() << " ]" ;
     return out.str() ;
 }
