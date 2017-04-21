@@ -12,16 +12,24 @@
 
 using namespace std ;
 
-
+// constructeurs
 Feuille::Feuille() : Arbre()
 {
 }
 
-Feuille::Feuille(int g1, int g2)
+Feuille::Feuille(Feuille* f) : Arbre()
+{
+    this->_gainJ1 = f->gainJ1();
+    this->_gainJ2 = f->gainJ2() ;
+}
+
+Feuille::Feuille(int g1, int g2) : Arbre()
 {
     this->_gainJ1 = g1;
     this->_gainJ2 = g2 ;
 }
+
+// Accesseurs
 
 int Feuille::gainJ1(){
     return this->_gainJ1 ;
@@ -43,6 +51,8 @@ int Feuille::gainJ2(){
     return this->_gainJ2 ;
 }
 
+
+// Jeux
 int Feuille::comparerGainJ1(Feuille* feuille){
     if (this->gainJ1() < feuille->gainJ1()) {
         return -1 ;

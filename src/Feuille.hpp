@@ -24,6 +24,8 @@ private:
 public:
     
     Feuille() ;
+    Feuille(Feuille* f) ;
+
     Feuille(int g1, int g2);
     int gainJ1();
     int gainJ2() ;

@@ -23,7 +23,6 @@ public:
     virtual std::string to_string() = 0 ;
     Arbre* parent() ;
     Arbre* parent(Arbre* p) ;
-
 };
 
 #endif /* Arbre_hpp */

@@ -12,6 +12,7 @@ int main(int a, char**v)
                             new Noeud("d", 2, new Feuille(5,6), new Feuille(7,8))) ;
     
     cout << test->to_string() << endl;
+    //cout << "Zermelo : " << test->zermelo()->to_string() << endl() ;
     
 	return 0 ;
 	

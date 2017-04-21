@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include "Arbre.hpp"
+#include "Feuille.hpp"
 #include <string>
 
 class Noeud : public Arbre {
@@ -35,6 +36,10 @@ public:
     int joueur() ;
     int joueur(int j) ;
     
+    // jeux
+    Feuille* zermelo(int j) ;
+    Feuille* zermelo() ;
+
     // Convertion de type
     std::string to_string() ;
 
