@@ -13,8 +13,17 @@
 #include <string>
 
 class Arbre {
+    // un arbre a un arbre parent. Si celui ci est null, alors c'est la racine.
+private:
+    Arbre* _parent ;
+protected:
+    Arbre () ;
+    Arbre (Arbre* p) ;
 public:
     virtual std::string to_string() = 0 ;
+    Arbre* parent() ;
+    Arbre* parent(Arbre* p) ;
+
 };
 
 #endif /* Arbre_hpp */

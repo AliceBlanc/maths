@@ -13,8 +13,8 @@
 using namespace std ;
 
 
-Feuille::Feuille()
-{    
+Feuille::Feuille() : Arbre()
+{
 }
 
 Feuille::Feuille(int g1, int g2)
@@ -25,6 +25,18 @@ Feuille::Feuille(int g1, int g2)
 
 int Feuille::gainJ1(){
     return this->_gainJ1 ;
+}
+
+int Feuille::gainJ1(int g)
+{
+    this->_gainJ1 = g ;
+    return this->_gainJ1 ;
+}
+
+int Feuille::gainJ2(int g)
+{
+    this->_gainJ2 = g ;
+    return this->_gainJ2 ;
 }
 
 int Feuille::gainJ2(){

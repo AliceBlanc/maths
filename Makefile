@@ -11,6 +11,8 @@ LIBDIR=.lib
 SRCFILES=$(SRCDIR)/Arbre.cpp $(SRCDIR)/Feuille.cpp $(SRCDIR)/Noeud.cpp $(SRCDIR)/test.cpp
 OBJFILES=$(subst $(SRCDIR),$(LIBDIR),$(subst .cpp,.o,$(SRCFILES)))
 
+$(SRCDIR)/%.cpp: $(SRCDIR)/%.hpp
+
 $(LIBDIR)/%.o: $(SRCDIR)/%.cpp
 	mkdir -p $(LIBDIR)
 	$(CPP) $(CPPARGS) -c -o $@ $^

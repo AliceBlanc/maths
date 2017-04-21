@@ -14,34 +14,81 @@
 
 using namespace std ;
 
-Noeud::Noeud()
+Noeud::Noeud() : Arbre()
 {
     //    Arbre::Arbre
     //    super() ;
 }
 
-Noeud::Noeud(Arbre* g, Arbre* d)
+Noeud::Noeud(Arbre* g, Arbre* d) : Arbre ()
+{
+    this->gauche(g) ;
+    this->droite(d) ;
+}
+
+Noeud::Noeud(string n, int j, Arbre* g, Arbre* d) : Arbre ()
+{
+    this->gauche(g) ;
+    this->droite(d) ;
+    this->nom(n) ;
+    this->joueur(j) ;
+}
+
+
+// Accesseurs aux fils gauche et droite.
+Arbre* Noeud::gauche(Arbre* g)
 {
     this->_gauche = g ;
-    this->_droite = d ;
+    this->_gauche->parent(this) ;
+    return this->_gauche ;
 }
 
-
-void Noeud::gauche(Arbre* g)
+Arbre* Noeud::gauche()
 {
-    this->_gauche = g ;
+    return this->_gauche ;
 }
 
-void Noeud::droite(Arbre* d)
+Arbre* Noeud::droite(Arbre* d)
 {
     this->_droite = d ;
+    this->_droite->parent(this) ;
+    return this->_droite ;
+}
+
+Arbre* Noeud::droite()
+{
+    return this->_droite ;
+}
+
+string Noeud::nom(string n)
+{
+    this->_nom = n ;
+    return this->_nom ;
+}
+
+string Noeud::nom()
+{
+    return this->_nom ;
+}
+
+int Noeud::joueur(int j)
+{
+    this->_joueur = j ;
+    return this->_joueur ;
+}
+
+int Noeud::joueur()
+{
+    return this->_joueur ;
 }
 
 
 
+// Convertion du Noeud en string
 string Noeud::to_string()
 {
     stringstream out ;
-    out << "Noeud [ " << this->_gauche->to_string() << ", " << this->_droite->to_string() << " ]" ;
+    out << "Noeud (" << this->nom() << "-" << "J" << std::to_string(this->joueur()) << ") [ " <<
+        this->_gauche->to_string() << ", " << this->_droite->to_string() << " ]" ;
     return out.str() ;
 }

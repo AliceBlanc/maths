@@ -24,9 +24,11 @@ private:
 public:
     
     Feuille() ;
-    Feuille(int,int);
+    Feuille(int g1, int g2);
     int gainJ1();
     int gainJ2() ;
+    int gainJ1(int g);
+    int gainJ2(int g) ;
     int comparerGainJ1(Feuille* feuille) ;
     int comparerGainJ2(Feuille* feuille) ;
     std::string to_string() ;

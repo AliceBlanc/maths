@@ -17,13 +17,27 @@ class Noeud : public Arbre {
 private :
     Arbre* _gauche ;
     Arbre* _droite ;
+    std::string _nom ;
+    int _joueur ;
     
 public:
+    // Constructeurs
     Noeud() ;
-    Noeud(Arbre*, Arbre*) ;
+    Noeud(Arbre* g, Arbre* d) ;
+    Noeud(std::string n, int j, Arbre* g, Arbre* d) ;
+    // Accesseurs
+    Arbre* gauche(Arbre*) ;
+    Arbre* gauche() ;
+    Arbre* droite(Arbre*) ;
+    Arbre* droite() ;
+    std::string nom() ;
+    std::string nom(std::string n) ;
+    int joueur() ;
+    int joueur(int j) ;
+    
+    // Convertion de type
     std::string to_string() ;
-    void gauche(Arbre*) ;
-    void droite(Arbre*) ;
+
 };
 
 #endif /* Noeud_hpp */
